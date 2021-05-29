@@ -4,8 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginView from "./src/routes/loginView/LoginView";
 import MainMenuNavigator from "./src/routes/mainScreen/MainMenuNavigator";
-import Reminder from "./src/routes/mainScreen/reminders/Reminders";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {StatusBar} from "expo-status-bar";
 
 
 const Stack = createStackNavigator();
@@ -16,7 +15,7 @@ export default function App() {
   return (
       <NavigationContainer>
           <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-            <Stack.Screen name='HomeStack' component={MainMenuNavigator}/>
+            <Stack.Screen name='HomeStack' component={MainMenuNavigator} options={{headerShown: false}}/>
             {/*<Stack.Screen name="LoginView" component={LoginView} options={{headerShown: false}}/>*/}
           </Stack.Navigator>
       </NavigationContainer>
