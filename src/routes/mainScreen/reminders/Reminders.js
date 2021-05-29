@@ -62,5 +62,6 @@ export default class Reminders extends React.Component {
 const reminderStyle = StyleSheet.create({
     container: {
         flex: 1,
+        marginTop: 30
     }
 });
