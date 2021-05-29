@@ -25,6 +25,10 @@ export default class MyTreatments extends React.Component {
         }
     }
 
+    handleClick(healingCourse) {
+        this.props.navigation.navigate('MyTreatmentDescription', healingCourse)
+    }
+
     render(){
         console.log(HEALING_COURSES.length)
         return(
@@ -37,7 +41,7 @@ export default class MyTreatments extends React.Component {
                         <View style={myTreatmentStyle.flatList}>
                             {HEALING_COURSES.map((item, i) => (
                                 <TouchableWithoutFeedback
-                                    onPress={() => {}}
+                                    onPress={() => this.handleClick(item)}
                                 >
                                     <View style={myTreatmentStyle.healingCourse}>
                                         <View style={myTreatmentStyle.firstRow}>

@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginView from "./src/routes/loginView/LoginView";
 import MainMenuNavigator from "./src/routes/mainScreen/MainMenuNavigator";
 import MyTreatments from './src/routes/mainScreen/treatment/myTreatments/MyTreatments';
+import MyTreatmentDescription from './src/routes/mainScreen/treatment/myTreatmentDescription/MyTreatmentDescription';
 import {Feather} from '@expo/vector-icons';
 const Stack = createStackNavigator();
 import {RFValue} from 'react-native-responsive-fontsize';
@@ -34,6 +35,8 @@ export default function App() {
                     )
                 })}
             />
+              <Stack.Screen name='MyTreatmentDescription'
+                            component={MyTreatmentDescription} options={{headerShown: false}}/>
               {/*<Stack.Screen name="LoginView" component={LoginView} options={{headerShown: false}}/>*/}
           </Stack.Navigator>
       </NavigationContainer>
