@@ -3,7 +3,7 @@ import axios from 'axios';
 import * as React from 'react'
 import {Button, Text, View, StyleSheet, TextInput} from "react-native";
 
-const URL = 'http://82bbf7c3e32d.ngrok.io';
+const URL = 'http://d36062ec5b85.ngrok.io';
 
 export default class LoginView extends React.Component {
     constructor(props) {
@@ -48,6 +48,11 @@ export default class LoginView extends React.Component {
         this.postToServer('login', params)
     };
 
+    componentDidUpdate() {
+        if (this.state.result === 'SUCCESS') {
+            this.props.navigation.navigate('HomeStack', { screen: 'Reminder' })
+        }
+    }
     render() {
         return (
             <View style={AuthStyle.container}>
@@ -77,7 +82,7 @@ export default class LoginView extends React.Component {
     }
 }
 
-export const AuthStyle = StyleSheet.create({
+const AuthStyle = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',

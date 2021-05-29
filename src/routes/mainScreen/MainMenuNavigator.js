@@ -6,14 +6,11 @@ import Reminder from './reminders/Reminders'
 const Tab = createBottomTabNavigator();
 
 function MainMenuNavigator() {
-    return (
-        <NavigationContainer>
-            <Tab.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-                <Tab.Screen name="Map" component={Map} options={{headerShown: false}}/>
-                <Tab.Screen name="Reminder" component={Reminder} options={{headerShown: false}}/>
-            </Tab.Navigator>
-        </NavigationContainer>
-    );
+    return(
+    <Tab.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+        <Tab.Screen name="Reminder" component={Reminder} options={{headerShown: false}}/>
+    </Tab.Navigator>
+    )
 }
 
 export default MainMenuNavigator;
